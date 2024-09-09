@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
+import { useGlobalContext } from "../../hooks/api/GlobalContext";
 const FixedBtns = () => {
+  const { data } = useGlobalContext();
   const [showArrow, setShowArrow] = useState(false);
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -34,7 +36,7 @@ const FixedBtns = () => {
         <FaArrowUpLong size={20} />
       </div>
       <a
-        href={`https://wa.me/+201022153359`}
+        href={`https://wa.me/${data?.phone}`}
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-20 right-4 w-12 h-12 rounded-[50%] flex justify-center items-center bg-[#25d366] text-white z-50 cursor-pointer"

@@ -69,5 +69,9 @@
   "atricals desc": "يمكنك تصفح أكثر من 150 مقالة من مقالات القمة المميزة",
   "read more": "قراءة المزيد",
   "see more blogs": "تصفح المزيد من المقالات",
-  "Mechanism": "الية العمل مع القمة"
+  "Mechanism": "الية العمل مع القمة",
+  "related blogs": "مقالات قد تنال إعجابك",
+  "email field is required": "يجب إدخال البريد الإلكتروني",
+  "msg field is required": "يجب إدخال رسالة",
+  "service field is required": "يجب إختيار خدمة"
 }

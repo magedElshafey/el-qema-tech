@@ -6,7 +6,7 @@ import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 import { services } from "../../../data/data";
 import ServicesCard from "../../common/cards/ServicesCard";
-const Services = () => {
+const Services = ({ data }) => {
   const { i18n } = useTranslation();
   const settings = {
     dots: false,
@@ -82,7 +82,7 @@ const Services = () => {
         </p>
       </button>
       <Slider ref={sliderRef} {...settings}>
-        {services?.map((item, index) => (
+        {data?.map((item, index) => (
           <div key={index} className="px-3">
             <ServicesCard data={item} />
           </div>

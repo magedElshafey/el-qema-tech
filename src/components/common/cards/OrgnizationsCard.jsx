@@ -6,7 +6,7 @@ const OrgnizationsCard = ({ data }) => {
     <div className="p-4 flex flex-col items-center justify-center gap-4 bg-white shadow-md">
       <img
         alt={data.title}
-        src={data.img}
+        src={data.image}
         className="w-[64px] h-[64px]"
         loading="lazy"
       />

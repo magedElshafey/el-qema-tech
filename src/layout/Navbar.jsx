@@ -6,9 +6,8 @@ import { useTranslation } from "react-i18next";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import SocialMedia from "../components/common/socialMedia/SocialMedia";
-
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [showSidebar, setShowSidebar] = useState(false);
   const sidebarRef = useRef(null);
   const closeSidebar = () => setShowSidebar(false);
@@ -23,6 +22,7 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
   return (
     <>
       <div className="w-full bg-blue text-white py-5 flex items-center">

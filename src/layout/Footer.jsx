@@ -4,9 +4,11 @@ import { useTranslation } from "react-i18next";
 import { navLinks, contactHeader } from "../data/data";
 import { NavLink } from "react-router-dom";
 import SocialMedia from "../components/common/socialMedia/SocialMedia";
+import { useGlobalContext } from "../components/hooks/api/GlobalContext";
 const Footer = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const { data } = useGlobalContext();
   return (
     <>
       <div className="w-full bg-darkColor py-5 flex items-center">
@@ -14,61 +16,61 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-12 text-slate-300">
             <div>
               <Logo />
-              <div className="mt-4">{t("lorem")}</div>
+              <div className="mt-4 text-slate-100">{data?.selgon}</div>
             </div>
             <div>
-              <p className="mb-4 font-bold text-base md:text-md lg:text-lg">
+              <p className="mb-4 font-bold text-base md:text-md lg:text-lg text-white">
                 {t("important links")}
               </p>
               <ul>
                 {navLinks?.map((item, index) => (
-                  <li key={index} className="mb-3">
+                  <li key={index} className="mb-3 text-slate-100">
                     <NavLink to={item.path}>{t(item.title)}</NavLink>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <p className="mb-4 font-bold text-base md:text-md lg:text-lg">
+              <p className="mb-4 font-bold text-base md:text-md lg:text-lg text-white">
                 {t("contact us")}
               </p>
               <ul>
                 <li className="flex items-center gap-1  mb-3">
-                  <p className="text-slate-600">{contactHeader?.email?.icon}</p>
+                  <p className="text-slate-100">{contactHeader?.email?.icon}</p>
                   <a
-                    href={`mailto:${contactHeader?.email?.value}`}
+                    href={`mailto:${data?.email}`}
                     target="_blank"
                     rel="noreferrer"
-                    className=" lowercase"
+                    className="text-slate-100 lowercase"
                   >
-                    {contactHeader?.email?.value}
+                    {data?.email}
                   </a>
                 </li>
                 <li className="flex items-center gap-1 mb-3">
-                  <p className="text-slate-600">{contactHeader?.phone?.icon}</p>
+                  <p className="text-slate-100">{contactHeader?.phone?.icon}</p>
                   <a
                     dir="ltr"
-                    href={`https://wa.me/${contactHeader?.phone?.value}`}
+                    href={`https://wa.me/${data?.phone}`}
                     target="_blank"
                     rel="noreferrer"
-                    className=" lowercase"
+                    className="text-slate-100 lowercase"
                   >
-                    {contactHeader?.phone?.value}
+                    {data?.phone}
                   </a>
                 </li>
                 <li className="flex items-center gap-1 ">
-                  <p className="text-slate-600">
+                  <p className="text-slate-100">
                     {contactHeader?.location?.icon}
                   </p>
-                  <p>{contactHeader?.location?.value}</p>
+                  <p className="text-slate-100">{data?.address}</p>
                 </li>
               </ul>
             </div>
             <div>
-              <p className="mb-4 font-bold text-base md:text-md lg:text-lg">
+              <p className="mb-4 font-bold text-base md:text-md lg:text-lg text-white">
                 {t("follow us")}
               </p>
-              <SocialMedia color="text-slate-300" />
+              <SocialMedia color="text-slate-100" />
             </div>
           </div>
         </div>

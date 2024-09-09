@@ -10,11 +10,15 @@ import AppRouter from "./routes/AppRouter";
 import { Toaster } from "react-hot-toast";
 // aos
 import "aos/dist/aos.css";
+// context
+import GlobalContext from "./components/hooks/api/GlobalContext";
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={queryClient}>
     <Toaster position="top-center" reverseOrder={false} />
-    <AppRouter />
+    <GlobalContext>
+      <AppRouter />
+    </GlobalContext>
   </QueryClientProvider>
 );

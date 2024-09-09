@@ -69,5 +69,9 @@
   "atricals desc": "You can browse more than 150 of the summit's featured articles",
   "read more": "read more",
   "see more blogs": "see more blogs",
-  "Mechanism": "Mechanism of working with the summit"
+  "Mechanism": "Mechanism of working with the summit",
+  "related blogs": "related blogs",
+  "email field is required": "email field is required",
+  "msg field is required": "message field is required",
+  "service field is required": "service field is required"
 }
