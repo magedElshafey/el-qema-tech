@@ -1,7 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 const FeatuerCard = ({ data }) => {
-  const { t } = useTranslation();
   return (
     <div className="p-4 cursor-pointer rounded-md duration-300 flex flex-col items-center justify-center gap-3 hover:shadow-xl bg-white">
       <div className=" relative w-24 h-24 rounded-[50%] flex items-center justify-center bg-blue text-white">

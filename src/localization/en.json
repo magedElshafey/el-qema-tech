@@ -73,5 +73,6 @@
   "related blogs": "related blogs",
   "email field is required": "email field is required",
   "msg field is required": "message field is required",
-  "service field is required": "service field is required"
+  "service field is required": "service field is required",
+  "category": "category"
 }

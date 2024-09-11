@@ -73,5 +73,6 @@
   "related blogs": "مقالات قد تنال إعجابك",
   "email field is required": "يجب إدخال البريد الإلكتروني",
   "msg field is required": "يجب إدخال رسالة",
-  "service field is required": "يجب إختيار خدمة"
+  "service field is required": "يجب إختيار خدمة",
+  "category": "التصنيف"
 }

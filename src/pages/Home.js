@@ -1,14 +1,6 @@
 import React from "react";
 import Hero from "../components/home/hero/Hero";
 import { useTranslation } from "react-i18next";
-import {
-  whyUs,
-  orgnizations,
-  portfolios,
-  blogs,
-  steps,
-  statistics,
-} from "../data/data";
 import FeatuerCard from "../components/common/cards/FeatuerCard";
 import OrgnizationsCard from "../components/common/cards/OrgnizationsCard";
 import About from "../components/home/about/About";
@@ -30,15 +22,24 @@ const fetchHomeData = async () => {
     url: "/home",
   });
 };
+const fetchAboutUsSection = async () => {
+  return await request({
+    url: "/about",
+  });
+};
 const Home = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const handleWorksNavigate = () => navigate("/works");
   const handleBlogsNavigate = () => navigate("/blogs");
   const { isLoading, data } = useQuery("home", fetchHomeData);
+  const { isLoading: loadingAbout, data: aboutData } = useQuery(
+    "about",
+    fetchAboutUsSection
+  );
   return (
     <>
-      {isLoading ? (
+      {isLoading || loadingAbout ? (
         <Spinner />
       ) : (
         <div className="my-8 lg:my-12">
@@ -77,7 +78,7 @@ const Home = () => {
             </div>
           </div>
           {/* about us section */}
-          <About />
+          <About data={aboutData?.data?.data || {}} />
           {/* services */}
           <div className="mb-12 lg:mb-24 container mx-auto px-6 md:px-8 lg:px-12">
             <p className="text-xs md:text-sm text-blue font-semibold mb-1 text-center">
@@ -98,7 +99,7 @@ const Home = () => {
                 {t("our works desc")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
-                {portfolios.slice(0, 6)?.map((item, index) => (
+                {data?.data?.data?.works.slice(0, 6)?.map((item, index) => (
                   <WorksCard key={index} data={item} />
                 ))}
               </div>

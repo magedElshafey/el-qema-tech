@@ -1,7 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 const Steps = ({ data }) => {
-  const { i18n } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center gap-2 text-white">
       <div className="relative">

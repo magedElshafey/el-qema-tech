@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { useTranslation } from "react-i18next";
-import { services } from "../../../data/data";
 import ServicesCard from "../../common/cards/ServicesCard";
 const Services = ({ data }) => {
   const { i18n } = useTranslation();

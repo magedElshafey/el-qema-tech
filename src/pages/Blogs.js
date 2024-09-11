@@ -1,5 +1,4 @@
 import React from "react";
-import { blogs } from "../data/data";
 import BlogCard from "../components/common/cards/BlogCard";
 import { useQuery } from "react-query";
 import { request } from "../services/axios";
