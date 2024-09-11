@@ -74,5 +74,13 @@
   "email field is required": "يجب إدخال البريد الإلكتروني",
   "msg field is required": "يجب إدخال رسالة",
   "service field is required": "يجب إختيار خدمة",
-  "category": "التصنيف"
+  "category": "التصنيف",
+  "project date": "تاريخ المشروع",
+  "visit the website": "زيارة الموقع الإلكتروني",
+  "status": "الحاله",
+  "available on the internet": "متوفر علي شبكة الإنترنت",
+  "type": "النوع",
+  "websitee": "موقع إلكتروني",
+  "client information": "معلومات عن العميل",
+  "about the client": "عن العميل"
 }

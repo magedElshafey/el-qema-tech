@@ -74,5 +74,13 @@
   "email field is required": "email field is required",
   "msg field is required": "message field is required",
   "service field is required": "service field is required",
-  "category": "category"
+  "category": "category",
+  "project date": "project date",
+  "visit the website": "visit the website",
+  "status": "status",
+  "available on the internet": "available on the internet",
+  "type": "type",
+  "websitee": "website",
+  "client information": "client information",
+  "about the client": "about the client"
 }
