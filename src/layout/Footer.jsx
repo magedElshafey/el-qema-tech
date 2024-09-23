@@ -9,6 +9,9 @@ const Footer = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const { data } = useGlobalContext();
+  const facebookLink = data?.socials?.find(
+    (item) => item?.slug === "facebook"
+  )?.link;
   return (
     <>
       <div className="w-full bg-darkColor py-5 flex items-center">
@@ -79,7 +82,7 @@ const Footer = () => {
         <p className="text-xs md:text-sm lg:text-base">
           {t("copyRight")}
           <a
-            href="https://nxtlvladv.com/"
+            href={facebookLink}
             target="_blank"
             rel="noreferrer"
             className="font-bold text-slate-400"

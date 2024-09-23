@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { request } from "../services/axios";
 import { useQuery } from "react-query";
@@ -8,6 +8,7 @@ import { FaArrowLeft, FaArrowRightLong } from "react-icons/fa6";
 import logo from "../assets/bird_2.jpg";
 const Work = () => {
   const { t, i18n } = useTranslation();
+  const [activeIndex, setActiveIndex] = useState(0);
   const params = useParams();
   const fetchData = async () => {
     return await request({
@@ -39,40 +40,47 @@ const Work = () => {
                   <FaArrowRightLong size={20} />
                 )}
               </p>
-              <p>{data?.data?.data?.title}</p>
+              <p>{data?.data?.data?.work.title}</p>
             </div>
           </div>
           <div className="container mx-auto px-6 md:px-8 lg:px-12">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
               <div className="w-full md:w-1/2 flex flex-col items-center gap-3">
                 <img
-                  alt={data?.data?.data?.title}
-                  src={data?.data?.data?.image}
+                  alt={data?.data?.data?.work?.title}
+                  src={data?.data?.data?.work?.images[activeIndex]}
                   loading="lazy"
                   className="w-[250px] h-[300px]"
                 />
 
                 {/* to do : slider */}
+                <div className="flex items-center gap-3">
+                  {
+                    data?.data?.data?.work?.images?.map((item , index) => <img key={index} alt = {data?.data?.data?.work?.title} src = {item} loading="lazy" className=" cursor-pointer w-10 h-10 border object-contain"  /> )
+                  }
+                </div>
               </div>
               <div>
                 <div className="pb-5 border-b border-bslate-600">
                   <h1 className="font-black text-blue text-md md:text-lg lg:text-xl xl:text-2xl mb-6 lg:mb-8">
-                    {data?.data?.data?.title}
+                    {data?.data?.data?.work?.title}
                   </h1>
                   <p className="text-slate-500 mb-4">
-                    {data?.data?.data?.description}
+                    {data?.data?.data?.work?.description}
                   </p>
                   <p className="font-black text-base md:text-md lg:text-lg mb-2">
                     {t("category")} :
                   </p>
                   <p className="text-white p-3 bg-blue flex items-center justify-center rounded-md w-[180px]">
-                    {data?.data?.data?.solution}
+                    {data?.data?.data?.work?.solution}
                   </p>
                 </div>
                 <div className="py-5 border-b border-bslate-600">
                   <div className="flex items-center gap-1 mb-3">
                     <p className="font-black">{t("project date")} :</p>
-                    <p className="text-slate-500">25-10-2023</p>
+                    <p className="text-slate-500">
+                      {data?.data?.data?.work?.created_at}
+                    </p>
                   </div>
                   <div className="flex items-center gap-1 mb-3">
                     <p className="font-black">{t("visit the website")} :</p>
@@ -102,12 +110,12 @@ const Work = () => {
                   </h2>
                   <div className="flex items-center gap-4 lg:gap-8">
                     <p className="text-base md:text-md xl:text-lg font-black text-blue">
-                      {data?.data?.data?.title}
+                      {data?.data?.data?.work?.title}
                     </p>
                     <img
                       loading="lazy"
                       src={logo}
-                      alt={data?.data?.data?.title}
+                      alt={data?.data?.data?.work?.title}
                       className="h-[80px] w-[80px]"
                     />
                   </div>

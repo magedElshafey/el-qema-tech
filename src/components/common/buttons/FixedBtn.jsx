@@ -25,6 +25,9 @@ const FixedBtns = () => {
       document.removeEventListener("scroll", handleShowArrow);
     };
   }, []);
+  const whatsLink = data?.socials?.find(
+    (item) => item?.slug === "whatsApp"
+  )?.link;
   return (
     <div>
       <div
@@ -36,7 +39,7 @@ const FixedBtns = () => {
         <FaArrowUpLong size={20} />
       </div>
       <a
-        href={`https://wa.me/${data?.phone}`}
+        href={whatsLink}
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-20 right-4 w-12 h-12 rounded-[50%] flex justify-center items-center bg-[#25d366] text-white z-50 cursor-pointer"
